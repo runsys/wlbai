@@ -1,5 +1,5 @@
 # wlbai
-!(图标)(./wlbai.png)
+!(图标)(./wlbai.jpg)
 wlbai 是一个AI程序，支持wlblang超高级编程语言进行交互
 wlblang新式超高级现代编程语言 wlbai智能AI程序说明
 *软件名称:="wlbai语言解释编译运行器"
