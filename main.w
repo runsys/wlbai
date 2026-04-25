@@ -1,117 +1,118 @@
-window1:Window{
-	Title{"Share WlbAI"}
-	column1:Column{
-		toptoolbar:Row{
-			topmenu:Button{
-				Icon{Menu}
-				Menu{
-					Item{
-						Text{"Camera Test"}
-						func OnClick() {
+Window window1{
+	Title {"WlbAI Window Sample"}
+	Column column1{
+		Row toptoolbar{
+			Button topmenu{
+				Icon {Menu}
+				Menu {
+					Item {
+						Text {"Camera Test"}
+						Func OnClick() {
 							CameraDemo()
 						}
 					}
-					Item{
-						Text{"Speaker Test"}
-						func OnClick() {
+					Item {
+						Text {"Speaker Test"}
+						Func OnClick() {
 							SpeakerDemo()
 						}
 					}
-					Item{
-						Text{"Mic Record Test"}
-						func OnClick() {
+					Item {
+						Text {"Mic Record Test"}
+						Func OnClick() {
 							MessageSnackbar("mic record 5 second.")
 							MicRecordDemo()
 						}
 					}
-					Item{
-						Text{"Widnow Demo"}
-						func OnClick() {
-							window2:Dialog{
-								Title{"Wlblang UI Demo"}
-								tabs1:Tabs{
-									tab1:Tab{
-										Title{"Buttons"}
-										Button1:Button{
-											Text{"Hello Button"}
-											func OnClick() {
-												pr("Hello world")
+					Item {
+						Text {"Widnow Demo"}
+						Func OnClick() {
+							Pr("Prepare window2 show")
+							Dialog window2{
+								Title {"Wlblang UI Demo"}
+								Tabs tabs1{
+									Tab tab1{
+										Title {"Buttons"}
+										Button Button1{
+											Text {"Hello Button"}
+											Func OnClick() {
+												Pr("Hello world")
 											}
 										}
-										Button2:Button{
-											Text{"Menu Button"}
-											Menu{
-												Item{
-													Text{"Menuitem 1"}
-													func OnClick() {
-														pr("Menuitem 1 clicked")
+										Button Button2{
+											Text {"Menu Button"}
+											Menu {
+												Item {
+													Text {"Menuitem 1"}
+													Func OnClick() {
+														Pr("Menuitem 1 clicked")
 													}
 												}
-												Item{
-													Text{"Menuitem 2"}
-													func OnClick() {
-														pr("Menuitem 2 clicked")
+												Item {
+													Text {"Menuitem 2"}
+													Func OnClick() {
+														Pr("Menuitem 2 clicked")
 													}
 												}
 											}
 										}
-										row1:Row{
-											textfield1:Textfield{
-												Text{"text 1"}
+										Row row1{
+											TextField textfield1{
+												Text {"text 1"}
 											}
-											Button2:Button{
-												Text{"Text with button"}
-												func OnClick() {
-													pr(textfield1.GetText())
+											Button Button2{
+												Text {"Text with button"}
+												Func OnClick() {
+													Pr(textfield1.GetText())
 												}
 											}
 										}
-										Button3:Button{
-											Text{"Icon Button"}
-											Icon{"Open"}
-											func OnClick() {
-												pr("Icon button with open icon")
+										Button Button3{
+											Text {"Icon Button"}
+											Icon {"Open"}
+											Func OnClick() {
+												Pr("Icon button with open icon")
 											}
 										}
-										button4:ColorButton{
-											Text{"ColorButton"}
+										ColorButton button4{
+											Text {"ColorButton"}
 										}
-										button5:ColorMapButton{
-											Text{"ColorMapButton"}
+										ColorMapButton button5{
+											Text {"ColorMapButton"}
 										}
-										button6:FileButton{
-											Text{"FileButton"}
+										FileButton button6{
+											Text {"FileButton"}
 										}
-										button7:FontButton{
-											Text{"FontButton"}
+										FontButton button7{
+											Text {"FontButton"}
 										}
-										button8:FormButton{
-											Text{"FormButton"}
+										FormButton button8{
+											Text {"FormButton"}
 										}
 									}
-									tab2:Tab{
-										Title{"Pictures"}
-										text1:Text{
+									Tab tab2{
+										Title {"Pictures"}
+										Text text1{
 											"Icon 1"
 										}
-										icon1:Icon{
+										Icon icon1{
 											"Save"
 										}
-										text2:Text{
+										Text text2{
 											"Image 1"
 										}
-										image1:Image{
+										Image image1{
 											"icon.png"
 										}
-										text2:Text{
+										Text text2{
 											"Svg 1"
 										}
-										svg1:Svg{
+										Svg svg1{
 											Svg{"Article"}
 										}
-										text3:Text{"Canvas 1"}
-										canvas1:Canvas{
-											func OnDraw(painter) {
+										Text text3{"Canvas 1"}
+										Canvas canvas1{
+											Func OnDraw(Painter painter) {
 												painter.StrokeColor(0,0,255)
 												painter.MoveTo(0.15, 0.3)
 												painter.LineTo(0.3, 0.15)
@@ -123,180 +124,185 @@ window1:Window{
 											}
 										}
 									}
-									tab3:Tab{
-										Title{"Inputs"}
-										textfield1text:Text{
-											"textfield 1"
+									Tab tab3{
+										Title {"Inputs"}
+										Text textfield1text{
+											"TextField 1"
 										}
-										textfield1:Textfield{
-											Text{"Textfield text"}
-											PlaceHolder{"Textfield placeholder"}
+										TextField textfield1{
+											Text {"TextField text"}
+											PlaceHolder {"TextField placeholder"}
 										}
-										passswordtextfield1text:Text{
+										Text passswordtextfield1text{
 											"passswordtextfield 1"
 										}
-										passswordtextfield1:Textfield{
-											Text{"Password Textfield text"}
-											TypePassword{true}
-											PlaceHolder{"Textfield placeholder"}
+										TextField passswordtextfield1{
+											Text {"Password TextField text"}
+											TypePassword {}
+											PlaceHolder {"TextField placeholder"}
 										}
-										spiner1text:Text{
+										Text spiner1text{
 											"spiner 1"
 										}
-										spiner1:Spinner{
-											Min{0}
-											Max{100}
-											Step{2}
-											Value{50}
+										Spinner spiner1{
+											Min {0}
+											Max {100}
+											Step {2}
+											Value {50}
 										}
-										chooser1text:Text{
+										Text chooser1text{
 											"chooser 1"
 										}
-										chooser1:Chooser{
-											Items{
+										Chooser chooser1{
+											Items {
 												"item 1:item 1 tooltip"
 												"item 2:item 2 tooltip"
 												"item 3:item 3 tooltip"
 											}
-											PlaceHolder{"Chooser Place Holder"}
+											PlaceHolder {"Chooser Place Holder"}
 										}
-										switch1text:Text{
-											Text{"switch 1"}
+										Text switch1text{
+											Text {"switch 1"}
 										}
-										switch1:Switch{
-											Text{"Switch text"}
-											Type{SwitchSwitch}
-											Value{true}
+										Switch switch1{
+											Text {"Switch text"}
+											Type {SwitchSwitch}
+											Checked {True}
 										}
-										switches1text:Text{
+										Text switches1text{
 											"switches 1"
 										}
-										switches1:Switches{
-											Type{
+										Switches switches1{
+											Type {
 												"SwitchSwitch"
 											}
-											Items{
+											Items {
 												"switch 1"
 												"switch 2"
 											}
 										}
-										slider1text:Text{
+										Text slider1text{
 											"slider row"
 										}
-										slider1:Slider{
-											Min{0}
-											Max{100}
-											Value{25}
-											Step{1}
+										Slider slider1{
+											Min {0}
+											Max {100}
+											Value {25}
+											Step {1}
 										}
-										slider2text:Text{
+										Text slider2text{
 											"slider column"
 										}
-										slider2:Slider{
-											Min{0}
-											Max{100}
-											Value{25}
-											Step{1}
-											Direction{"Column"}
+										Slider slider2{
+											Min {0}
+											Max {100}
+											Value {25}
+											Step {1}
+											Direction {"Column"}
 										}
-										meter1text:Text{
+										Text meter1text{
 											"meter 1 circle"
 										}
-										meter1:Meter{
-											Type{"MeterCircle"}
-											Value{0}
-											Min{0}
+										Meter meter1{
+											Type {"MeterCircle"}
+											Value {0}
+											Min {0}
 											Max{100}
-											Text{"Meter text"}
+											Text {"Meter text"}
 										}
-										meter2text:Text{
+										Text meter2text{
 											"meter 2 circle"
 										}
-										meter2:Meter{
-											Type{"MeterSemicircle"}
-											Value{0}
-											Min{0}
-											Max{100}
-											Text{"Meter text"}
+										Meter meter2{
+											Type {"MeterSemicircle"}
+											Value {0}
+											Min {0}
+											Max {100}
+											Text {"Meter text"}
 										}
-										editor11text:Text{
+										Text editor11text{
 											"editor 1"
 										}
-										editor1:Editor{
-											Text{"editor 1 text"}
+										Editor editor1{
+											Text {"editor 1 text"}
 										}
-										durationinput1text:Text{
+										Text durationinput1text{
 											"durationinput 1"
 										}
-										durationinput1:DurationInput{
-											Duration{T210342}
+										DurationInput durationinput1{
+											Duration {Second8}
 										}
-										timepicker1:Text{
+										Text timepicker1{
 											"timepicker 1"
 										}
-										timepicker1:TimePicker{
-											Time{D20251229T171304}
+										TimePicker timepicker1{
+											Time {D2025-12-29T17:13:04}
 										}
-										datepicker1:Text{
+										TimeInput timepicker1{
+											DisplayDate {True}
+											DisplayTime {True}
+											Time {D2025-12-29T17:13:04}
+										}
+										Text datepicker1{
 											"datepicker 1"
 										}
-										datepicker1:DatePicker{
-											Date{D20251229T171304}
+										DatePicker datepicker1{
+											Date{D2025-12-29T17:13:04}
 										}
 									}
-									tab4:Tab{
-										Title{"Container"}
-										splits1:Splits{
-											editor1:Editor{
-												Text{"edit1"}
+									Tab tab4{
+										Title {"Container"}
+										Splits splits1{
+											Editor editor1{
+												Text {"edit1"}
 											}
-											editor2:Editor{
-												Text{"edit2"}
+											Editor editor2{
+												Text {"edit2"}
 											}
 										}
-										row2:Row{
-											text1:Text{
+										Row row2{
+											Text text1{
 												"Row 1"
 											}
-											button1:Button{
-												Text{"Button1"}
+											Button button1{
+												Text {"Button1"}
 											}
-											button2:Button{
-												Text{"Button2"}
+											Button button2{
+												Text {"Button2"}
 											}
 										}
 									}
-									tab5:Tab{
-										Title{"Collections"}
-										list1:List{
-											Rows{
+									Tab tab5{
+										Title {"Collections"}
+										List list1{
+											Rows {
 												"list item 1"
 												"list item 2"
 												"list item 3"
 											}
 										}
-										list2:List{
-											Rows{
+										List list2{
+											Rows {
 												{"fname1", "fname1val"}
 												{"fname2",  "fname2val"}
 												{"fname3",  "fname3val"}
 											}
 										}
-										keyedlist:KeyedList{
-											Rows{
+										KeyedList keyedlist{
+											Rows {
 												{"name", "name1"}
 												{"length",  100}
 												{"height",  200}
 											}
 										}
-										keyedlist:KeyedListButton{
-											Rows{
+										KeyedListButton keyedlist{
+											Rows {
 												{"name", "name1"}
 												{"length",  100}
 												{"height",  200}
 											}
 										}
-										tree1:Tree{
+										Tree tree1{
 											Node1{
 												Node1_1{
 													Node1_1_1{
@@ -307,147 +313,137 @@ window1:Window{
 											}
 											Node2{
 												Node2_1{
-											
+													"nodevalue1"
 												}
 												Node2_2{
-											
+													"nodevalue2"
 												}
 											}
 										}
 									}
-									tab6:Tab{
-										Title{"Dialogs"}
-										button1:Button{
-											Text{"Message dialog"}
-											func OnClick() {
+									Tab tab6{
+										Title {"Dialogs"}
+										Button button1{
+											Text {"Message dialog"}
+											Func OnClick() {
 												MessageDialog("message","title")
 											}
 										}
-										button2:Button{
-											Text{"Error dialog"}
-											func OnClick() {
+										Button button2{
+											Text {"Error dialog"}
+											Func OnClick() {
 												ErrorDialog("error","title")
 											}
 										}
-										button3:Button{
-											Text{"Message snackbar"}
-											func OnClick() {
+										Button button3{
+											Text {"Message snackbar"}
+											Func OnClick() {
 												MessageSnackbar("message")
 											}
 										}
-										button4:Button{
-											Text{"Error snackbar"}
-											func OnClick() {
+										Button button4{
+											Text {"Error snackbar"}
+											Func OnClick() {
 												ErrorSnackbar("error")
 											}
 										}
-										button5:Button{
-											Text{"Input dialog"}
-											func OnClick() {
-												dialog1:Dialog{
-													Title{"Input dialog"}
-													textfield1:Textfield{}
-													BottomBar{
-														func OnCancel() {
-															pr("dialog cancle")
+										Button button5{
+											Text {"Input dialog"}
+											Func OnClick() {
+												Dialog dialog1{
+													Title {"Input dialog"}
+													TextField textfield1{}
+													BottomBar {
+														Func OnCancel() {
+															Pr("dialog cancle")
 														}
-														func OnOK() {
-															pr("dialog ok1")
+														Func OnOK() {
+															Pr("dialog ok1")
 														}
 													}
 												}
-												dialog1.RunDialog()
+												dialog1.RunDialog(button5)
 											}
 										}
-										button6:Button{
-											Text{"Full dialog"}
-											func OnClick() {
-												dialog1:Dialog{
-													Title{"Full dialog"}
-													textfield1:Textfield{}
-													BottomBar{
-														func OnCancel() {
-															pr("dialog cancle")
+										Button button6{
+											Text {"Full dialog"}
+											Func OnClick() {
+												Dialog dialog1{
+													Title {"Full dialog"}
+													TextField textfield1{}
+													BottomBar {
+														Func OnCancel() {
+															Pr("dialog cancle")
 														}
-														func OnOK() {
-															pr("dialog ok1")
+														Func OnOK() {
+															Pr("dialog ok1")
 														}
 													}
 												}
-												dialog1.RunFullDialog()
+												dialog1.RunFullDialog(button6)
 											}
 										}
 									}
 								}
-								BottomBar{
-									func OnCancel() {
-										pr("demo canceled")
+								BottomBar {
+									Func OnCancel() {
+										Pr("demo canceled")
 									}
-									func OnOK() {
-										pr("demo OK")
+									Func OnOK() {
+										Pr("demo OK")
 									}
 								}
 							}
-							window2.RunFullDialog()
+							window2.RunFullDialog(topmenu)
 						}
 					}
 				}
 			}
-			title:Text{
-				"Share WlbAI"
+			Text title{
+				"WlbAI"
+			}
+			Button sendbtn{
+				">Line"
+				Func OnClick() {
+					Pr("run line")
+				}
+			}
+			Button sendbtn{
+				">All"
+				Func OnClick() {
+					Pr("run all")
+				}
 			}
 		}
-		hisfrm:Column{
+		Column hisfrm{
 		}
-		inputfrm:Column{
-			editor1:Editor{
+		Column inputfrm{
+			Editor editor1{
 			}
-			buttonbar:Row{
-				sendbtn:Button{
-					Icon{Send}
-					func OnClick() {
+			Row buttonbar{
+				Button sendbtn{
+					Icon {Send}
+					Func OnClick() {
 						txt:=editor1.GetText()
 						hisfrm.append(txt)
 						editor1.SetText("")
-						pr(txt)
+						Pr(txt)
 					}
 				}
-				filebtn:Button{
-					Icon{File}
-					func OnChange() {
+				Button filebtn{
+					Icon {File}
+					Func OnChange() {
 						editor1.InsertText(filebtn.FileName())
 					}
 				}
-				micbtn:Button{
-					Icon{Mic}
-					mic:=NewMic()
-					micstop:=true
-					func OnClick() {
-						if micbtn.GetIcon()==Mic {
-							mic.Start()
-							func monmic(aa)() {
-								for micstop==false {
-									data:=mic.GetData()
-									text:=MicDataToText(data)
-									editor1.InsertText(text)
-									sleep(1000ms)
-								}
-							}
-							go monmic(aaf)
-							micbtn.SetIcon(RecordVoiceOver)
-							micbtn.Update()
-						} else {
-							mic.Stop()
-							micstop=true
-							//data:=mic.GetData()
-							//text:=MicDataToText(data)
-							//editor1.InsertText(text)
-							micbtn.SetIcon(Mic)
-							micbtn.Update()
-						}
+				Button micbtn{
+					Icon {Mic}
+					Func OnClick() {
+						Pr("Mic Btn Clicked")
 					}
 				}
 			}
 		}
 	}
 }
+window1.RunMainWindow()
