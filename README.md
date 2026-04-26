@@ -14,7 +14,7 @@ wlblang 0.4.0-2025/05/26-2026/04/25 wlblang语言参考:
 
 变量定义与赋值表示方法:
 
-TypeNae VarName1 VarName2
+TypeName VarName1 VarName2
 
 或者
 
@@ -116,35 +116,35 @@ true|false
 
 值(操作符值)*
 
-if框架条件判断执行表达式:
+If框架条件判断执行表达式:
 
-if bool表达式 {
+If bool表达式 {
 
-} elif bool表达式 {
+} Elif bool表达式 {
 
-} else {
-
-}
-
-for框架循环执行表达式:
-
-for bool表达式 {
+} Else {
 
 }
 
-switch框架选择值执行表达式:
+For框架循环执行表达式:
 
-switch 变量名 case 值1 {
-
-} case 值2 {
-
-} default {
+For bool表达式 {
 
 }
 
-func框架函数定义表达式:
+Switch框架选择值执行表达式:
 
-func (|左操作值定义)函数名(右操作值定义)(|返回值定义) {
+Switch 变量名 case 值1 {
+
+} Case 值2 {
+
+} Default {
+
+}
+
+Func框架函数定义表达式:
+
+Func (|左操作值定义)函数名(右操作值定义)(|返回值定义) {
 
 }
 
@@ -178,12 +178,532 @@ FromObj obj{
 
 }
 
-结构时间线:
+已经内部支持的一些函数, 数学函数, 字符串函数,类型转换函数等:
+Abs
 
-句子框架:(ident|math_expr([tab_blank]expr))+
+Acos
 
-已经内部支持的一些函数:数学函数, 字符串函数
+acosh
 
+Asin
+
+Asinh
+
+Atan
+
+Atan2
+
+Atanh
+
+Cbrt
+
+Ceil
+
+Copysign
+
+Cos
+
+Cosh
+
+Dim
+
+Erf
+
+Erfc
+
+Exp
+
+Exp2
+
+Expm1
+
+Floor
+
+Gamma
+
+Hypot
+
+Ilogb
+
+Inf
+
+IsInf
+
+IsNaN
+
+J0
+
+J1
+
+Jn
+
+Ldexp
+
+Log
+
+Log10
+
+Log1p
+
+Log2
+
+Logb
+
+Max
+
+Min
+
+Mod
+
+NaN
+
+Nextafter
+
+Pow
+
+Pow10
+
+Remainder
+
+Signbit
+
+Sin
+
+Sinh
+
+Sqrt
+
+Tan
+
+Tanh
+
+Trunc
+
+Y0
+
+y1
+
+Yn
+
+I1
+
+I2
+
+I4
+
+I4sUtf32Str
+
+I8
+
+U1
+
+U1sUtf8Str
+
+U2
+
+U4
+
+U8
+
+F4
+
+F8
+
+Bit
+
+BitI8
+
+BitGet
+
+BitSet
+
+Bo
+
+BoStr
+
+Str
+
+Sleep
+
+Pr", "Spr //string print format default
+
+Len
+
+SliceReplace
+
+Copy
+
+PrintTree
+
+ValEles
+
+TopLeftEles
+
+TopRightEles
+
+Fu //first UTF-8 unicode char; return (weChar unichar,weI8 nextpos)
+
+StrI4s
+
+StrU1s
+
+StrRep
+
+StrRxRep
+
+StrIndex
+
+StrIndexAny
+
+StrLastIndex
+
+StrLastIndexAny
+
+StrSplit
+
+StrSub
+
+StrSuffix
+
+StrPrefix
+
+StrTrimSpace
+
+StrTrim
+
+StrTrimL
+
+StrTrimR
+
+StrCmp
+
+StrBefor
+
+StrAfter
+
+StrIsNumber
+
+StrTime
+
+FixLen
+
+TimeZoneOffsetSeconds
+
+TimeZoneOffsetNanoseconds
+
+NowTime
+
+NowUTCSeconds
+
+NowLocalSeconds
+
+NowUTCNanoseconds
+
+NowLocalNanoseconds
+
+UTCTimeSeconds
+
+LocalTimeSeconds
+
+UTCTimeNanoseconds
+
+LocalTimeNanoseconds
+
+NewLocalTime //年,月,日,小时, 分钟, 秒,纳秒
+
+NewUTCTime //年,月,日,小时, 分钟, 秒,纳秒
+
+TimeAdd
+
+TimeSub
+
+UTCTimeStr
+
+UTCDateStr
+
+UTCDateTimeStr
+
+UTCDayTimeStr
+
+UTCHourTimeStr
+
+UTCMinuteTimeStr
+
+UTCSecondTimeStr
+
+UTCMillisecondTimeStr
+
+UTCMicrosecondTimeStr
+
+UTCNanosecondTimeStr
+
+LocalTimeStr
+
+LocalDateStr
+
+LocalDateTimeStr
+
+LocalDayTimeStr
+
+LocalHourTimeStr
+
+LocalMinuteTimeStr
+
+LocalSecondTimeStr
+
+LocalMillisecondTimeStr
+
+LocalMicrosecondTimeStr
+
+LocalNanosecondTimeStr
+
+UTCYears
+
+UTCMonths
+
+UTCDays
+
+UTCHours
+
+UTCMinutes
+
+UTCSeconds
+
+UTCMilliseconds
+
+UTCMicroseconds
+
+UTCNanoseconds
+
+LocalYears
+
+LocalMonths
+
+LocalDays
+
+LocalHours
+
+LocalMinutes
+
+LocalSeconds
+
+LocalMilliseconds
+
+LocalMicroseconds
+
+LocalNanoseconds
+
+UTCTimeYear
+
+UTCTimeMonth
+
+UTCTimeMonthDay
+
+UTCTimeHour
+
+UTCTimeMinute
+
+UTCTimeSecond
+
+UTCTimeMillisecond
+
+UTCTimeMicrosecond
+
+UTCTimeNanosecond
+
+LocalTimeYear
+
+LocalTimeMonth
+
+LocalTimeMonthDay
+
+LocalTimeHour
+
+LocalTimeMinute
+
+LocalTimeSecond
+
+LocalTimeMillisecond
+
+LocalTimeMicrosecond
+
+LocalTimeNanosecond
+
+FileReadAll
+
+HttpPost
+
+HttpServer
+
+UrlDomain
+
+ReadStdinLine
+
+ReadStdinMultiline
+
+RandSeed
+
+RandI8p
+
+RandI8pn
+
+RandI4p
+
+RandI4pn
+
+RandU4
+
+RandU8
+
+RandF4
+
+RandF8
+
+RandNormF8
+
+RandExpF8
+
+NewChan
+
+ChanPut
+
+ChanGet
+
+NewMutex
+
+MutexLock
+
+MutexUnlock
+
+MutexRLock
+
+MutexRUnlock
+
+NewWaitGroup
+
+WaitGroupWait
+
+WaitGroupAdd
+
+NewCond
+
+CondWait
+
+CondSignal
+
+CondBroadcast
+
+Append
+
+Sort
+
+Eles
+
+ParseCode
+
+BuildSentence
+
+Value
+
+Panic
+
+New
+
+NewBody
+
+NewFrame
+
+NewTabs
+
+NewSplits
+
+NewText
+
+NewButton
+
+TextField
+
+NewColorButton
+
+NewColorMapButton
+
+NewFileButton
+
+NewFontButton
+
+NewCanvas
+
+NewIcon
+
+NewSVG
+
+NewImage
+
+NewTextField
+
+NewSpinner
+
+NewChooser
+
+NewSwitch
+
+NewSwitches
+
+NewSlider
+
+NewMeter
+
+NewEditor
+
+NewDurationInput
+
+NewTimePicker
+
+NewDatePicker
+
+NewList
+
+NewKeyedList
+
+NewKeyedListButton
+
+NewForm
+
+NewFormButton
+
+NewTable
+
+NewTree
+
+MessageDialog
+
+ErrorDialog
+
+MessageSnackbar
+
+ErrorSnackbar
+
+Utf8
+
+Utf16
+
+Utf32 
+
+Utf8Str", "Utf16Str", "Utf32Str", "U1Str", "U2sStr", "U4sStr", "I4sStr
+
+Utf16leStr
+
+Utf16beStr
+
+Utf32leStr
+
+Utf32beStr
+
+IndexOf
+
+Continue
+
+Break
 
 
 wlblang core图形界面编程参考手册:
@@ -9394,7 +9914,7 @@ wlbai命令行帮助:
 
 a:="hello"<1个回车代码换行>
 
-pr(a)<两个回车结束代码输入>
+Pr(a)<两个回车结束代码输入>
 
 命令行输出:
 
@@ -9404,23 +9924,55 @@ pr(a)<两个回车结束代码输入>
 
 界面编程例子:
 
-window1:Window{
+Window window1{
 
-	textfield1:Textfield{}
+	"Simple WlbAI window program"
 
-	button1:Button{
+	TextField textfield1{"textfield"}
 
-		Text{"say hello"}
+	Button button1{
 
-		func OnClick() {
+		"say hello"
 
-			textfield1.SetText("Hello")
+		Func OnClick() {
+
+			textfield1.SetText("Hello world!")
 
 		}
 
 	}
 
 }
+
+window1.RunMainWindow()
+
+斐波那契数计算例子:
+Func Fib(I8 x,I8 a,I8 b)(I8 out) {
+
+        If x==0 {
+
+                Return a
+
+        } Elif x==1 {
+
+                Return b
+
+        }
+
+        Return Fib(x-1,b,a+b)
+
+}
+
+t1:=NowLocalNanoseconds()
+
+rl:=Fib(10,0,1)
+
+t2:=NowLocalNanoseconds()
+
+Pr(t2-t1)
+
+现在运行耗时100毫米,不过有巨大的优化空间.
+
 
 
 
