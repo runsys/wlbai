@@ -9905,21 +9905,20 @@ ErrorSnackbar(Message_String)
 
 
 wlbai命令行帮助:
-
+命令行支持多行输入代码;
 两次回车结束wlblang语句输入;
-
-
 
 命令行hello world 例子:
 
-a:="hello"<1个回车代码换行>
+a:="hello"
 
-Pr(a)<两个回车结束代码输入>
+Pr(a)
+
+
 
 命令行输出:
 
 "hello"
-
 
 
 界面编程例子:
