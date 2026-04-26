@@ -9964,7 +9964,7 @@ Func Fib(I8 x,I8 a,I8 b)(I8 out) {
 
 t1:=NowLocalNanoseconds()
 
-rl:=Fib(10,0,1)
+rl:=Fib(35,0,1)
 
 t2:=NowLocalNanoseconds()
 
