@@ -1,3 +1,9 @@
+//Env
+Console	con{
+	Func OnInput(We input) {
+		Pr(input.Calc())
+	}
+}
 Window window1{
 	Title {"WlbAI Window Sample"}
 	Column column1{
@@ -402,48 +408,30 @@ Window window1{
 			Text title{
 				"WlbAI"
 			}
-			Button sendbtn{
-				">Line"
-				Func OnClick() {
-					Pr("run line")
-				}
-			}
-			Button sendbtn{
-				">All"
-				Func OnClick() {
-					Pr("run all")
-				}
-			}
 		}
-		Column hisfrm{
-		}
-		Column inputfrm{
-			Editor editor1{
-			}
-			Row buttonbar{
-				Button sendbtn{
-					Icon {Send}
-					Func OnClick() {
-						txt:=editor1.GetText()
-						hisfrm.append(txt)
-						editor1.SetText("")
-						Pr(txt)
-					}
-				}
-				Button filebtn{
-					Icon {File}
-					Func OnChange() {
-						editor1.InsertText(filebtn.FileName())
-					}
-				}
-				Button micbtn{
-					Icon {Mic}
-					Func OnClick() {
-						Pr("Mic Btn Clicked")
-					}
-				}
-			}
+		Mathpad mathpad1{
+			EvalLine {True}
 		}
 	}
 }
 window1.RunMainWindow()
+//Models
+//Controllers
+//Methods
+Func Thinking() {
+	inch:=NewChan()
+	Env{
+		
+	}
+	Models{
+		
+	}
+	Controllers{
+		
+	}
+	For True {
+		envin:=ChanGet(inch)
+		
+	}
+}
+
