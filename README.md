@@ -157,11 +157,11 @@ Switch 变量名 case 值1 {
 Func框架函数定义表达式:
 
 Func (|左操作值定义)函数名(右操作值定义)(|返回值定义) {
-
+	Return expr
 }
 
 多返回值函数接收例子:(return1,return2)=myfunc()
-
+Start {} 运行routine语句
 结构框架定义:
 
 结构名{
